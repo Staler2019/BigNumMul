@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "C:/llvm/lib/gcc/x86_64-w64-mingw32/**",
+                "C:/llvm/include/**",
+                "C:/llvm/x86_64-w64-mingw32/include/**"
+            ],
+            "defines": [
+                "_LOCAL_"
+            ],
+            "windowsSdkVersion": "10.0.18362.0",
+            // "compilerPath": "C:/TDM-GCC-64/bin/g++.exe",
+            "cStandard": "c11",
+            "intelliSenseMode": "clang-x64",
+            "cppStandard": "c++17",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/include",
+                    "C:/llvm/lib/gcc/x86_64-w64-mingw32",
+                    "C:/llvm/include",
+                    "C:/llvm/x86_64-w64-mingw32/include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            }
+        }
+    ],
+    "version": 4
+}
