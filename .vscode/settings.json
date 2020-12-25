@@ -18,5 +18,22 @@
     "-std=c++17",
     "-Wall"
   ],
-  "clang.completion.enable": true
+  "clang.completion.enable": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.exe": true,
+    "**/*.lnk": true,
+    "**/.vscode": true
+  },
+  "explorerExclude.backup": null,
+  "files.associations": {
+    "iosfwd": "cpp",
+    "ostream": "cpp",
+    "istream": "cpp",
+    "fstream": "cpp"
+  }
 }
