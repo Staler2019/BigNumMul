@@ -7,7 +7,7 @@ using namespace std;
 #define MAXLENGTH 505
 
 int arr1[MAXLENGTH];
-int arr2[MAXLENGTH];
+int arrbhkuh2[MAXLENGTH];
 int product[2 * MAXLENGTH];
 
 /*
