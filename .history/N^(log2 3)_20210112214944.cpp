@@ -1,9 +1,9 @@
 /*******************************************************************************
- *   Date：      2021-01-12
- *   Author：    Staler2019
- *   Problem:    karatsuba
- *   Reference:  https://blog.csdn.net/SunnyYoona/article/details/43234889
- *******************************************************************************/
+*   Date：      2021-01-12
+*   Author：    Staler2019
+*   Problem:    karatsuba
+*   Reference:  https://blog.csdn.net/SunnyYoona/article/details/43234889
+*******************************************************************************/
 #include <chrono>
 #include <fstream>
 #include <iostream>
@@ -15,8 +15,7 @@ using namespace std;
 int arr1[MAXLENGTH];
 int arr2[MAXLENGTH];
 int product[2 * MAXLENGTH];
-int add1[MAXLENGTH];
-int add2[MAXLENGTH];
+int addiction[2 * MAXLENGTH];
 
 /*
     目標 : 大數乘法 N^(log2 3) 盡量在200位內超車N^2，最好的情況是能在100位內超車
@@ -37,13 +36,7 @@ int add2[MAXLENGTH];
 
 */
 
-// add[add_len]為-1預防無法使用add_len
-int addTo(string &ans, string &element, int start, int len);
-// Purpose: store to addiction
-void karatsuba_add(int start, int len);
-// Purpose:
-// 1. store to product
-// 2. return product
+string add();
 string mul(int start, int len);
 
 int main() {
@@ -86,63 +79,23 @@ int main() {
     return 0;
 }
 
-int addTo(string &ans, string &element, int start, int len) {
-    int mid = len / 2;
-    // add1, add2由前往後是尾部到頭
-    int i = mid - 1, j = len - mid - 1, add_len = 0;
-    int a, b, sum, carry = 0;
-    while (i >= 0 || j >= 0 || carry > 0) {
-        a = i >= 0 ? element[start + i] - '0' : 0;
-        b = j >= 0 ? element[start + mid + j] - '0' : 0;
-        // 按位相加並加上進位
-        sum = a + b + carry;
-        // 進位
-        carry = sum / 10;
-        ans[add_len] = sum % 10;
-        --i;
-        --j;
-        add_len++;
-    }
-    ans[add_len] = -1; // 預防add_len沒用
-    return add_len;
-}
+string add();
 
-void karatsuba_add(int start, int len) {
-    // hint
-    // string x1 = substr(0,mid);
-    // string x0 = substr(mid,len - mid);
-
-    // hint
-    // string y1 = substr(0,mid);
-    // string y0 = substr(mid,len - mid);
-
-    int mid = len / 2;
-    // init add1, add2
-    for (int i = 0; i < mid + 1; i++) add1[i] = add2[i] = 0;
-
-    int len_1 = add_to(add1, arr1, start, len);
-    int len_2 = add_to(add2, arr2, start, len);
-    return
-}
-
-string mul(int start, int len) {
+string mul(/*參數*/int start, int len) {
     if (len == 0) return "0";
     if (len == 1) return to_string(arr1[start] * arr2[start]);
 
     string ans;
     //運算
     int mid = len / 2;
-    // hint
     // string x1 = substr(0,mid);
     // string x0 = substr(mid,len - mid);
 
-    // hint
     // string y1 = substr(0,mid);
     // string y0 = substr(mid,len - mid);
 
     // string z0 = mul(mid,len-mid);
-    // karatsuba_add
-    // string z1 = KaratsubaMultiply(AddString(x1,x0),AddString(y1,y0)); // TODO
-    // string z2 = mul(0,mid);
+    // string z1 = KaratsubaMultiply(AddString(x1,x0),AddString(y1,y0));
+    // string z2 = KaratsubaMultiply(x1,y1);
     return ans;
 }

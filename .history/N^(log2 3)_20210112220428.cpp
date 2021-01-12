@@ -37,8 +37,7 @@ int add2[MAXLENGTH];
 
 */
 
-// add[add_len]為-1預防無法使用add_len
-int addTo(string &ans, string &element, int start, int len);
+void addTo(string &ans, string &element, int start, int len);
 // Purpose: store to addiction
 void karatsuba_add(int start, int len);
 // Purpose:
@@ -86,25 +85,8 @@ int main() {
     return 0;
 }
 
-int addTo(string &ans, string &element, int start, int len) {
+void addTo(string &ans, string &element, int start, int len){
     int mid = len / 2;
-    // add1, add2由前往後是尾部到頭
-    int i = mid - 1, j = len - mid - 1, add_len = 0;
-    int a, b, sum, carry = 0;
-    while (i >= 0 || j >= 0 || carry > 0) {
-        a = i >= 0 ? element[start + i] - '0' : 0;
-        b = j >= 0 ? element[start + mid + j] - '0' : 0;
-        // 按位相加並加上進位
-        sum = a + b + carry;
-        // 進位
-        carry = sum / 10;
-        ans[add_len] = sum % 10;
-        --i;
-        --j;
-        add_len++;
-    }
-    ans[add_len] = -1; // 預防add_len沒用
-    return add_len;
 }
 
 void karatsuba_add(int start, int len) {
@@ -118,11 +100,8 @@ void karatsuba_add(int start, int len) {
 
     int mid = len / 2;
     // init add1, add2
-    for (int i = 0; i < mid + 1; i++) add1[i] = add2[i] = 0;
-
-    int len_1 = add_to(add1, arr1, start, len);
-    int len_2 = add_to(add2, arr2, start, len);
-    return
+    for (int i = 0; i < mid / 2 + 1; i++) add1[i] = add2[i] = 0;
+    add_to()
 }
 
 string mul(int start, int len) {
