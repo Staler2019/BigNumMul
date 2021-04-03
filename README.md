@@ -1,4 +1,4 @@
-# Big Num Topic
+# Big Num Multiplication Topic
 
 ## 拖慢原因
 
@@ -22,3 +22,10 @@
 4. 盡量200位內超車
 5. 禁用malloc
 6. 宣告array總長度<5000
+
+## Warning
+
+1. 我用了 ofstream 輸出每次跑的時間
+2. 測資存在 ./data 資料夾裡
+3. 結果存在 ./ans 資料夾裡
+4. 參考檔案放在 ./ref 資料夾裡
